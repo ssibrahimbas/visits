@@ -1,0 +1,7 @@
+FROM golang:alpine
+WORKDIR /home/ssibrahimbas/GolandProjects/visits
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+COPY . .
+RUN go build -v -o /usr/local/bin/visits .
+CMD ["visits"]

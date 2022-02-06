@@ -1,0 +1,9 @@
+version: '3'crashes
+services:
+  redis-server:
+    image: 'redis'
+  go-app:
+    restart: always
+    build: .
+    ports:
+      - "8081:8081"
